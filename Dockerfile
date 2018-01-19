@@ -4,8 +4,9 @@ ARG SW_FILE
 ADD $SW_FILE /tmp/
 RUN yum -y install xterm xauth libXtst wget
 RUN cd /etc/yum.repos.d/
-RUN ls -la
+RUN pwd
 RUN wget https://sdkrepo.atlassian.com/atlassian-sdk-stable.repo
+RUN ls -la
 RUN yum clean all
 RUN yum updateinfo metadata
 RUN yum repolist
