@@ -5,6 +5,9 @@ pipeline {
     }
 
   }
+  options {
+    buildDiscarder(logRotator(numToKeepStr:'10'))
+  }
   stages {
     stage('Build Atlassian Plugin Development Image') {
       steps {
@@ -13,7 +16,7 @@ pipeline {
         sh 'ls -la $SW_DIR/$SW_FILE'
         withCredentials([usernamePassword(credentialsId: 'store.docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''docker login --username $USERNAME --password $PASSWORD
-sudo docker build --tag tkleiber/atlassian:$SW_VERSION --build-arg SW_FILE=$SW_FILE .'''
+docker build --tag tkleiber/atlassian:$SW_VERSION --build-arg SW_FILE=$SW_FILE .'''
         }
       }
     }
