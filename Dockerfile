@@ -7,7 +7,7 @@ RUN yum -y install xterm xauth libXtst wget tar \
 && ls -la ~/ideaIC \
 && ls -la /tmp/${SW_FILE} \
 && tar zxvf --file=/tmp/${SW_FILE} --directory=~/ideaIC \
-&& rm -f /tmp/${SW_FILE]
+&& rm -f /tmp/${SW_FILE}
 RUN ls -la ~/ideaIC
 RUN wget https://sdkrepo.atlassian.com/atlassian-sdk-stable.repo -P /etc/yum.repos.d/
 RUN yum clean all
