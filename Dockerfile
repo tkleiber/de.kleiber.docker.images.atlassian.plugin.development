@@ -5,6 +5,7 @@ ADD $SW_FILE /tmp/
 RUN yum -y install xterm xauth libXtst wget
 RUN cd /etc/yum.repos.d/
 RUN ls -la /etc/yum.repos.d/
+RUN yum-config-manager --add-repo http://sdkrepo.atlassian.com/rpm-stable
 RUN pwd
 RUN wget https://sdkrepo.atlassian.com/atlassian-sdk-stable.repo
 RUN ls -la
