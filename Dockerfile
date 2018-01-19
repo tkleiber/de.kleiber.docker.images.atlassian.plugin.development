@@ -6,7 +6,6 @@ RUN yum -y install xterm xauth libXtst wget tar
 RUN mkdir ~/ideaIC
 RUN ls -la ~/ideaIC
 RUN ls -la /tmp/${SW_FILE}
-RUN
 RUN tar zxvf --file=/tmp/${SW_FILE} --directory=~/ideaIC
 RUN rm -f /tmp/${SW_FILE]
 RUN ls -la ~/ideaIC
