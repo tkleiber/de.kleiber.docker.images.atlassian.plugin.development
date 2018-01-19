@@ -13,6 +13,6 @@ RUN cd /etc/yum.repos.d/ \
 && yum install atlassian-plugin-sdk
 USER vagrant
 RUN mkdir ~/ideaIC \
-&& tar zxvf $SW_FILE ~/ideaIC
-ls -la ~/ideaIC
+&& tar zxvf $SW_FILE ~/ideaIC \
+&& ls -la ~/ideaIC
 CMD ~/ideaIC/idea
