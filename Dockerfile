@@ -2,7 +2,7 @@ FROM store/oracle/serverjre:8
 MAINTAINER torsten.kleiber@web.de
 ARG SW_FILE
 ADD $SW_FILE /tmp/
-RUN yum -y install install xterm xauth libXtst wget
+RUN yum -y install xterm xauth libXtst wget
 RUN cd /etc/yum.repos.d/
 RUN wget https://sdkrepo.atlassian.com/atlassian-sdk-stable.repo
 RUN yum clean all
