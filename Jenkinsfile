@@ -31,8 +31,8 @@ docker build --tag tkleiber/atlassian:$SW_VERSION --build-arg SW_FILE=$SW_FILE .
         sh 'docker rmi --force tkleiber/atlassian:$SW_VERSION'
       }
     }
+    */
   }
-*/
   environment {
     SW_VERSION = '1.0.0'
     SW_FILE = 'ideaIC-2017.3.3.tar.gz'
