@@ -1,7 +1,6 @@
 FROM store/oracle/serverjre:8
 MAINTAINER torsten.kleiber@web.de
 ARG SW_FILE
-USER root
 ADD $SW_FILE /tmp/
 RUN yum -y install install xterm xauth libXtst wget \
 && cd /etc/yum.repos.d/ \
