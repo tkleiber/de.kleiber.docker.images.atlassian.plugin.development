@@ -1,6 +1,7 @@
 FROM store/oracle/serverjre:8
 MAINTAINER torsten.kleiber@web.de
 ARG SW_FILE
+RUN echo $SW_FILE
 ADD $SW_FILE /tmp/
 RUN ls -la /tmp
 RUN yum -y install xterm xauth libXtst wget tar
