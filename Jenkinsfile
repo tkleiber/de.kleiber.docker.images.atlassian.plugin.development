@@ -12,8 +12,6 @@ pipeline {
     stage('Build Atlassian Plugin Development Image') {
       steps {
         sh 'if [ ! -f $SW_FILE ]; then cp "$SW_DIR/$SW_FILE" $SW_FILE; fi'
-        sh 'ls -la $SW_FILE'
-        sh 'ls -la $SW_DIR/$SW_FILE'
         withCredentials([usernamePassword(credentialsId: 'store.docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''docker login --username $USERNAME --password $PASSWORD
 docker build --tag tkleiber/atlassian:$SW_VERSION --build-arg SW_FILE=$SW_FILE .'''

@@ -4,7 +4,9 @@ ARG SW_FILE
 COPY ${SW_FILE} /tmp/
 RUN yum -y install xterm xauth libXtst wget tar
 RUN mkdir ~/ideaIC
-RUN tar zxvf /tmp/${SW_FILE} ~/ideaIC
+RUN ls -la ~/ideaIC
+RUN ls -la /tmp/${SW_FILE}
+RUN tar zxvf /tmp/${SW_FILE} -C ~/ideaIC
 RUN rm -f /tmp/${SW_FILE]
 RUN ls -la ~/ideaIC
 RUN wget https://sdkrepo.atlassian.com/atlassian-sdk-stable.repo -P /etc/yum.repos.d/
