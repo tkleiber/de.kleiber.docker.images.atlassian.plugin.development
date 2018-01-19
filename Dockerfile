@@ -8,6 +8,7 @@ RUN yum clean all
 RUN yum updateinfo metadata
 RUN yum -y install atlassian-plugin-sdk
 RUN mkdir ~/ideaIC
-RUN tar zxvf $SW_FILE ~/ideaIC
+RUN tar zxvf /tmp/$SW_FILE ~/ideaIC
+RUN rm -f /tmp/$SW_FILE
 RUN ls -la ~/ideaIC
 CMD ~/ideaIC/idea
