@@ -9,6 +9,7 @@ RUN yum -y install xterm xauth libXtst wget tar gzip \
 && wget https://sdkrepo.atlassian.com/atlassian-sdk-stable.repo -P /etc/yum.repos.d/ \
 && yum clean all \
 && yum updateinfo metadata \
-&& yum -y install atlassian-plugin-sdk \
-&& ls -la ideaIC/idea-IC-173.4301.25/bin
+&& yum -y install atlassian-plugin-sdk
+RUN ls -la ideaIC/idea-IC-173.4301.25/bin
+RUN more ideaIC/idea-IC-173.4301.25/bin/idea.sh
 CMD ideaIC/idea-IC-173.4301.25/bin/idea.sh
