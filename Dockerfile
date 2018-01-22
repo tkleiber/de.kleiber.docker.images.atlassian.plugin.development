@@ -2,7 +2,7 @@ FROM store/oracle/serverjre:8
 MAINTAINER torsten.kleiber@web.de
 ARG SW_FILE
 COPY ${SW_FILE} /tmp/
-RUN yum -y install xterm xauth libXtst wget tar gzip \
+RUN yum -y install xterm xauth libXtst wget tar gzip which \
 && mkdir ideaIC \
 && tar zxf /tmp/${SW_FILE} --directory=ideaIC \
 && rm -f /tmp/${SW_FILE} \
@@ -10,7 +10,5 @@ RUN yum -y install xterm xauth libXtst wget tar gzip \
 && yum clean all \
 && yum updateinfo metadata \
 && yum -y install atlassian-plugin-sdk
-RUN ls -la ideaIC/idea-IC-173.4301.25/bin
-RUN cat ideaIC/idea-IC-173.4301.25/bin/idea.sh
-# CMD ideaIC/idea-IC-173.4301.25/bin/idea.sh
-CMD /bin/bash
+CMD ideaIC/idea-IC-173.4301.25/bin/idea.sh
+# CMD /bin/bash
