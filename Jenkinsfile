@@ -18,7 +18,6 @@ docker build --tag tkleiber/atlassian:$SW_VERSION --build-arg SW_FILE=$SW_FILE .
         }
       }
     }
-/*
     stage('Push Docker Image to Local Registry') {
       steps {
         sh 'docker tag tkleiber/atlassian:$SW_VERSION localhost:5000/tkleiber/atlassian:$SW_VERSION'
@@ -31,7 +30,6 @@ docker build --tag tkleiber/atlassian:$SW_VERSION --build-arg SW_FILE=$SW_FILE .
         sh 'docker rmi --force tkleiber/atlassian:$SW_VERSION'
       }
     }
-    */
   }
   environment {
     SW_VERSION = '1.0.0'
