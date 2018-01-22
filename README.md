@@ -1,7 +1,7 @@
 # Docker Image for Atlassian Plugin Development
 
 This is the repository for creating a Docker Image from where you can running Atlassian Plugin Development with
-IntelliJ IDEA Community Edition and Atlassian Plugin SDK  from Windows.
+IntelliJ IDEA Community Edition and Atlassian Plugin SDK from Windows.
 
 ## Jenkins Pipeline for creating the image:
 * At first your Linux VM should contain a local docker registry on port 5000, you can use the default docker registry image for this
