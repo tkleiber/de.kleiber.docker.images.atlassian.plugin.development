@@ -33,6 +33,6 @@ docker build --tag tkleiber/atlassian:$SW_VERSION --build-arg SW_FILE=$SW_FILE .
   environment {
     SW_VERSION = '1.0.0'
     SW_FILE = 'ideaIU-2021.3.1.tar.gz'
-    SW_DIR = '/software/IntelliJ'
+    SW_DIR = '/software/saved/IntelliJ'
   }
 }
